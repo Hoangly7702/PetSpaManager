@@ -1,0 +1,37 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+
+body {
+  
+  /* max-width: 1400px; */
+  margin: auto;
+  text-align: justify;
+  font-family: 'AntTeam', sans-serif;
+  /* padding: 10px; */
+  font-size: 62.5%px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#container{
+
+  font-family: 'AntTeam', sans-serif;
+  font-size: 16px;
+  margin:auto;
+  justify-content: center;
+  /* // align-items: center; */
+  text-align:left;
+  max-width:1260px;
+  /* max-width:1400px; */
+  /* margin-left:15%;
+  margin-right:15%; */
+   
+}
