@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const route = require('./routes')
 // const mongoose = require('mongoose');
 
 dotenv.config()
@@ -9,8 +10,11 @@ const port = process.env.PORT || 3001;
 
 
 const db = require('./config/db');
+const routes = require('./routes');
 
 db.connect();
+
+route(app);
 
 // console.log('process.env.MONGO_DB', process.env.MONGO_DB)
 
@@ -25,9 +29,7 @@ db.connect();
 
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World, hihi')
-})
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
