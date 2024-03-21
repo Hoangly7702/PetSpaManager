@@ -1,4 +1,4 @@
-const mongose = require('mongose')
+const mongose = require('mongoose')
 const petSchema = new mongose.Schema(
     {
         name: { type: String, required: true },

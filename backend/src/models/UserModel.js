@@ -1,13 +1,13 @@
-const mongose = require('mongose')
+const mongose = require('mongoose')
 const userSchema = new mongose.Schema(
     {
-        name: { type: String, required: true, unique: true },
-        image: {type:String, require: true},
-        type: {type: String, require: true},
-        price: {type: Number, require: true},
-        rating: {type:Number, default: 0, require: true},
-        description:{type:String, require: true}
-
+        name: { type: String, required: true },
+        email: { type: String, unique: true, lowercase: true, required: true },
+        password: { type: String, required: true },
+        isAdmin: {tyoe: Boolean, default: false},
+        phone: {type: Number, requỉre: true},
+        access_token: {type:String},
+        refresh_token: {type: String}
     },{
         timestamps:true
     }

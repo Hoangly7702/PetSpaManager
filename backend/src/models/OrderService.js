@@ -1,4 +1,4 @@
-const mongose = require('mongose')
+const mongose = require('mongoose')
 const orderSchema = new mongose.Schema(
     {
         pet: { type: mongoose.Schema.Types.ObjectId, ref: 'Pet', required: true },
