@@ -2,19 +2,24 @@ const express = require('express');
 const dotenv = require('dotenv');
 const route = require('./routes')
 // const mongoose = require('mongoose');
+const bodyParser  = require('body-parser');
 
 dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 3001;
 
+app.use(bodyParser.json())
+
 
 const db = require('./config/db');
 const routes = require('./routes');
 
+
 db.connect();
 
 route(app);
+
 
 // console.log('process.env.MONGO_DB', process.env.MONGO_DB)
 
