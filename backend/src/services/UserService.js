@@ -1,14 +1,28 @@
 const User = require("../models/UserModel");
+const bcrypt = require( "bcrypt" );
+// create and save user to the database
 
 const createUser = (newUser) => {
     return new Promise( async (resolve, reject) => {
         const { name, email, password, confirmPassword, phone } = newUser;
 
         try {
+            const checkUser =  await User.findOne({email: email});
+            
+            if(checkUser != null){
+                resolve({
+                    status: 'OK',
+                    message:'Email already exists'
+                })
+                
+            } 
+            const hash =  await bcrypt.hashSync(password,10);
+            console.log('Hashed Password: ', hash);
+            
             const createUser = await User.create({
                 name, 
                 email, 
-                password, 
+                password: hash, 
                 confirmPassword, 
                 phone
             })
