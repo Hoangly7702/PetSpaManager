@@ -32,8 +32,8 @@ const HeaderComponent = () => {
         {
             key: '1',
             label: (
-                <a target="" rel="noopener noreferrer" href="/sign-in">
-                    Đăng Nhập
+                <a target="" rel="noopener noreferrer" href="/sign-in" >
+                    <span style={{fontSize:"16px"}}>Đăng Nhập</span>
                 </a>
             ),
         },
@@ -41,7 +41,7 @@ const HeaderComponent = () => {
             key: '2',
             label: (
                 <a target="" rel="noopener noreferrer" href="/sign-up">
-                    Đăng Ký
+                    <span style={{fontSize:"16px"}}>Đăng Ký</span>
                 </a>
             ),
         },
