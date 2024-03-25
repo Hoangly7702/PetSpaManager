@@ -158,8 +158,8 @@ const deleteUser = (id, data) => {
                 })
             }
 
-            const deleteUser = await User.findByIdAndDelete(id, {new: true});
-            // console.log('updateUser :>> ', updateUser);
+            // await User.findByIdAndDelete(id);
+
 
             resolve({
                 status: "OK",

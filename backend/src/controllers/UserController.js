@@ -103,6 +103,9 @@ const deleteUser = async (req, res) => {
 
     try {
         const userID = req.params.id
+        const token = req.headers
+        console.log("UserID: ", userID)
+        console.log("Token from header : ", token);
 
         if(!userID){
             return res.status(200).json({
