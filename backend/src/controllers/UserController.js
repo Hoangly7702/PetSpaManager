@@ -86,8 +86,8 @@ const updateUser = async (req, res) => {
             })
         }
 
-        console.log('user ID in controller :>> ', userID);
-        const response = await UserService.updateUser(userID,data);
+        // console.log('user ID in controller :>> ', userID);
+        const response = await UserService.updateUser(userID, data);
 
         return res.status(200).json(response);
     } catch (e) {
@@ -99,10 +99,34 @@ const updateUser = async (req, res) => {
 
 }
 
+const deleteUser = async (req, res) => {
 
+    try {
+        const userID = req.params.id
+
+        if(!userID){
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'No user id provided!'
+            })
+        }
+
+        // console.log('user ID in controller :>> ', userID);
+        const response = await UserService.deleteUser(userID);
+
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+
+    }
+
+}
 
 module.exports = {
     createUser,
     loginUser,
-    updateUser
+    updateUser,
+    deleteUser
 }

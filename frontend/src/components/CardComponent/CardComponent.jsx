@@ -20,9 +20,10 @@ const CardComponent = () => {
                     <a href="/detail">
                         <CardMedia
                             component="img"
-                            height="180"
+                            height="200"
                             image={images}
                             alt="Picture"
+
                         />
                     </a>
                     <CardContent>

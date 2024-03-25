@@ -102,20 +102,32 @@ const loginUser = (login) => {
 }
 
 
-const updateUser = (id,data) => {
+const updateUser = (id, data) => {
     return new Promise(async (resolve, reject) => {
-        const { name, email, password, confirmPassword, phone } = update;
+        // const { name, email, password, confirmPassword, phone } = update;
 
         try {
             
 
-            const checkUser = await User.findOne({ email: email });
-
+            const checkUser = await User.findOne({
+                _id: id
+            });
+            console.log("checkUser :>> ", checkUser);
            
+            if (checkUser === null){
+                resolve({
+                    status: 'OK',
+                    message: 'The user is not defined'
+                })
+            }
+
+            const updateUser = await User.findByIdAndUpdate(id, data, {new: true});
+            console.log('updateUser :>> ', updateUser);
+
             resolve({
                 status: "OK",
                 message: "Update user is successfully!",
-                // data: checkUser,
+                data: updateUser
  
             })
 
@@ -127,8 +139,44 @@ const updateUser = (id,data) => {
 }
 
 
+const deleteUser = (id, data) => {
+    return new Promise(async (resolve, reject) => {
+        // const { name, email, password, confirmPassword, phone } = update;
+
+        try {
+            
+
+            const checkUser = await User.findOne({
+                _id: id
+            });
+            console.log("checkUser :>> ", checkUser);
+           
+            if (checkUser === null){
+                resolve({
+                    status: 'OK',
+                    message: 'The user is not defined'
+                })
+            }
+
+            const deleteUser = await User.findByIdAndDelete(id, {new: true});
+            // console.log('updateUser :>> ', updateUser);
+
+            resolve({
+                status: "OK",
+                message: "Delete user is successfully!",
+ 
+            })
+
+        } catch (e) {
+            reject(e);
+
+        }
+    })
+}
+
 module.exports = {
     createUser,
     loginUser,
-    updateUser
+    updateUser,
+    deleteUser
 }
