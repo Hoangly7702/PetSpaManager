@@ -3,7 +3,7 @@ import React from 'react'
 import imageservice from '../../assets/images/service/catmong.webp';
 import ImageSmallService from '../../assets/images/service/catmongboss.jpeg';
 import { WrappedPriceService, WrappedPriceTextService, WrappedStyleCol, WrappedStyleCollmage, WrappedStyleImageSmall, WrappedStyleNameService, WrappedStyleTextSell } from './style';
-import { ClockCircleOutlined, StarFilled} from  '@ant-design/icons'; 
+import { ClockCircleOutlined, StarFilled } from '@ant-design/icons';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 
@@ -33,11 +33,11 @@ const ServiceDetailComponent = () => {
 
                     <div>
                         <WrappedStyleNameService>Spa - Dịch vụ Cắt - Mài móng</WrappedStyleNameService>
-                        <StarFilled style={{fontSize:"20px",color:"#ffc400"}} />
-                        <StarFilled style={{fontSize:"20px",color:"#ffc400"}} />
-                        <StarFilled style={{fontSize:"20px",color:"#ffc400"}} />
-                        <StarFilled style={{fontSize:"20px",color:"#ffc400"}} />
-                        <StarFilled style={{fontSize:"20px",color:"#ffc400"}} />
+                        <StarFilled style={{ fontSize: "20px", color: "#ffc400" }} />
+                        <StarFilled style={{ fontSize: "20px", color: "#ffc400" }} />
+                        <StarFilled style={{ fontSize: "20px", color: "#ffc400" }} />
+                        <StarFilled style={{ fontSize: "20px", color: "#ffc400" }} />
+                        <StarFilled style={{ fontSize: "20px", color: "#ffc400" }} />
 
                         <WrappedStyleTextSell> | 77 đánh giá | 202 người mua</WrappedStyleTextSell>
 
@@ -51,20 +51,20 @@ const ServiceDetailComponent = () => {
                             bordered={false}
                             size={40}
                             styleButton={{
-                                background:"#be9660",
-                                height:"60px",
-                                width:"200px",
-                                border:"none",
-                                borderRadius:"5px",
-                                marginTop:"20px"
-                                
+                                background: "#be9660",
+                                height: "60px",
+                                width: "200px",
+                                border: "none",
+                                borderRadius: "5px",
+                                marginTop: "20px"
+
                             }}
                             textButton={'Đặt hẹn'}
                             styleTextButton={{
-                                color:"#fff",
-                                alignItem:"center",
+                                color: "#fff",
+                                alignItem: "center",
                                 fontSize: "30px",
-                                fontWeight:"500"
+                                fontWeight: "500"
                             }}
                         >
 
