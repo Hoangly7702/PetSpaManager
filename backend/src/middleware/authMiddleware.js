@@ -3,7 +3,7 @@ const dotenv = require( 'dotenv' )
 dotenv.config()
 
 const authMiddleware = (req, res, next) => {
-    console.log('checkToken', req.headers.token);
+    // console.log('checkToken', req.headers.token);
     const token = req.headers.token.split(' ')[1]
     jwt.verify(token, process.env.ACCESS_TOKEN, function (err, user) {
         console.log("ERROR: ", err);
@@ -14,7 +14,19 @@ const authMiddleware = (req, res, next) => {
                  
             })
         }
-        
+        const { payload } = user;
+        if (payload?.isAdmin){
+            // console.log('admin');
+            next()
+            // req.user = payload
+        }
+        else{
+            return res.status(404).json({
+                message: 'The authemtication',
+                status: 'ERR'
+                 
+            })
+        }
         console.log('user: ',user) // bar
     });
 }

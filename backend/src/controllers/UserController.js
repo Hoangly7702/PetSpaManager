@@ -127,9 +127,63 @@ const deleteUser = async (req, res) => {
 
 }
 
+
+const getAllUsers = async (req, res) => {
+
+    try {
+    
+        const response = await UserService.getAllUsers();
+
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+
+    }
+
+}
+
+
+const getDetailUser = async (req, res) => {
+
+    try {
+        const userID = req.params.id
+        // const token = req.headers
+        // console.log("UserID: ", userID)
+        // console.log("Token from header : ", token);
+
+        if(!userID){
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'No user id provided!'
+            })
+        }
+
+        // console.log('user ID in controller :>> ', userID);
+        const response = await UserService.getDetailUser(userID);
+
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+
+    }
+
+}
+
+
+
+
+
+
+
 module.exports = {
     createUser,
     loginUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    getAllUsers,
+    getDetailUser
 }
